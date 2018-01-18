@@ -41,12 +41,16 @@ using namespace std;
     node *temp= new node;
     cur= head;
     temp->data=value;
+    if(pos<=countItems()) //To check if the list has that many elements
+    {
     for(int i=1;i<pos;i++)
     { prev= cur;
      cur=cur->next;	
     }
     prev->next=temp;
-    temp->next=cur;
+    temp->next=cur;}
+    else
+    cout<<"Linkedlist does not have that many elements.\n";
     
     }
     
@@ -71,6 +75,8 @@ using namespace std;
      node *prev=new node;
      node *after=new node;
      cur=head;
+     if(pos<=countItems()) //To check if the list has that many elements 
+     {
      for(int i=1;i<pos; i++)
      {prev=cur;
       cur=cur->next;
@@ -78,6 +84,9 @@ using namespace std;
      }
      prev->next=after;
      delete cur;
+     }
+     else
+     cout<<"Linkedlist does not have that many elements\n.";
     }
     
     int countItems() //To count the number of elements in the list
@@ -94,6 +103,7 @@ using namespace std;
     {
     	node*temp= new node;
     	temp=head;
+    	cout<<"The list is:";
     	while(temp!=NULL)
     	{
     		cout<<temp->data<<"->";
@@ -109,15 +119,17 @@ int main() {
  l.insert(1);
  l.insert(2);
  l.display();
- cout<<l.countItems()<<endl;
+ cout<<"The total number of elements in the list is "<<l.countItems()<<endl;
  l.insertAt(2,3);
  l.display();
  l.Delete();
  l.display();
  l.insertAt(2,4);
-  cout<<l.countItems()<<endl;
  l.display();
+  cout<<"The total number of elements in the list is "<<l.countItems()<<endl;
  l.deleteAt(2);
  l.display();
+ l.insertAt(5,4);
+ l.deleteAt(3);
 	return 0;
 }
