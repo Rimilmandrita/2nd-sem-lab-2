@@ -49,7 +49,22 @@ using namespace std;
     temp->next=cur;
     
     }
-    void display()// to display the elements
+    
+    void Delete()// delete element at the end of list
+    {
+    	node*cur=new node;
+    	node*prev=new node;
+    	cur=head;
+    	while(cur->next!=NULL)
+    	{
+    	prev=cur;
+    	cur=cur->next;
+    	}
+    	tail=prev;
+    	prev->next=NULL;
+    	delete cur;
+    }
+   void display()// to display the elements
     {
     	node*temp= new node;
     	temp=head;
@@ -69,6 +84,8 @@ int main() {
  l.insert(2);
  l.display();
  l.insertAt(2,3);
+ l.display();
+ l.Delete();
  l.display();
 
 	return 0;
