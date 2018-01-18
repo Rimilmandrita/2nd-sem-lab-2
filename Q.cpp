@@ -78,7 +78,17 @@ using namespace std;
      }
      prev->next=after;
      delete cur;
-    	
+    }
+    
+    int countItems() //To count the number of elements in the list
+    {       int count=0;
+    	node *temp=new node;
+    	temp= head;
+    	while(temp!=NULL)
+    	{ temp=temp->next;
+    	count++;
+    	}
+    	return count;
     }
    void display()// to display the elements
     {
@@ -99,11 +109,13 @@ int main() {
  l.insert(1);
  l.insert(2);
  l.display();
+ cout<<l.countItems()<<endl;
  l.insertAt(2,3);
  l.display();
  l.Delete();
  l.display();
  l.insertAt(2,4);
+  cout<<l.countItems()<<endl;
  l.display();
  l.deleteAt(2);
  l.display();
