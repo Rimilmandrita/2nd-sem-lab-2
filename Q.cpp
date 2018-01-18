@@ -34,7 +34,7 @@ using namespace std;
         tail=temp;
       }
     }
-    void insertAt(int pos,int value)
+    void insertAt(int pos,int value)// to insert element at a certain position
     {
     node *cur=new node;
     node *prev=new node;
@@ -49,7 +49,7 @@ using namespace std;
     temp->next=cur;
     
     }
-    void display()
+    void display()// to display the elements
     {
     	node*temp= new node;
     	temp=head;
@@ -64,7 +64,7 @@ using namespace std;
     
   };	
 int main() {
- linkedList l;
+ linkedList l; // Declaring object of class linkedList
  l.insert(1);
  l.insert(2);
  l.display();
