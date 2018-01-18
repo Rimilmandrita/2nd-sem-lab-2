@@ -64,6 +64,22 @@ using namespace std;
     	prev->next=NULL;
     	delete cur;
     }
+    
+    void deleteAt(int pos)// delete element at a certain position
+    {
+     node *cur=new node;
+     node *prev=new node;
+     node *after=new node;
+     cur=head;
+     for(int i=1;i<pos; i++)
+     {prev=cur;
+      cur=cur->next;
+      after=cur->next;
+     }
+     prev->next=after;
+     delete cur;
+    	
+    }
    void display()// to display the elements
     {
     	node*temp= new node;
@@ -87,6 +103,9 @@ int main() {
  l.display();
  l.Delete();
  l.display();
-
+ l.insertAt(2,4);
+ l.display();
+ l.deleteAt(2);
+ l.display();
 	return 0;
 }
